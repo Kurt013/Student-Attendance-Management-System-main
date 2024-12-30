@@ -149,7 +149,9 @@ if(isset($_POST['save'])){
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Take Attendance (Today's Date : <?php echo $todaysDate = date("m-d-Y");?>)</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item" style="color: #ADD1C8;">
+            <a href="./" style="color: #385b3c; text-decoration: none;">Home</a>
+            </li>
               <li class="breadcrumb-item active" aria-current="page">All Student in Class</li>
             </ol>
           </div>
@@ -165,7 +167,7 @@ if(isset($_POST['save'])){
               <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">All Student in (<?php echo $rrw['className'].' - '.$rrw['classArmName'];?>) Class</h6>
+                  <h6 class="m-0 font-weight-bold style="color: #385B3C;">All Student in (<?php echo $rrw['className'].' - '.$rrw['classArmName'];?>) Class</h6>
                   <h6 class="m-0 font-weight-bold text-danger">Note: <i>Click on the checkboxes besides each student to take attendance!</i></h6>
                 </div>
                 <div class="table-responsive p-3">
@@ -228,7 +230,7 @@ if(isset($_POST['save'])){
                     </tbody>
                   </table>
                   <br>
-                  <button type="submit" name="save" class="btn btn-primary">Take Attendance</button>
+                  <button type="submit" name="save" class="btn btn-primary" style="background-color: #385B3C; border-color: #385B3C;">Take Attendance</button>
                   </form>
                 </div>
               </div>

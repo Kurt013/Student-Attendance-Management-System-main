@@ -126,7 +126,9 @@ if(isset($_POST['save'])){
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Create Class</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item" style="color: #ADD1C8;">
+            <a href="./" style="color: #385b3c; text-decoration: none;">Home</a>
+            </li>
               <li class="breadcrumb-item active" aria-current="page">Create Class</li>
             </ol>
           </div>
@@ -136,7 +138,7 @@ if(isset($_POST['save'])){
               <!-- Form Basic -->
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Create Class</h6>
+                  <h6 class="m-0 font-weight-bold style="color: #385B3C;">Create Class</h6>
                     <?php echo $statusMsg; ?>
                 </div>
                 <div class="card-body">
@@ -156,7 +158,9 @@ if(isset($_POST['save'])){
                     <?php
                     } else {           
                     ?>
-                    <button type="submit" name="save" class="btn btn-primary">Save</button>
+                    <button type="submit" name="save" class="btn btn-primary" style="background-color: #385B3C; border-color: #385B3C;">
+                    Save
+                    </button>
                     <?php
                     }         
                     ?>
@@ -169,7 +173,7 @@ if(isset($_POST['save'])){
               <div class="col-lg-12">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">All Classes</h6>
+                  <h6 class="m-0 font-weight-bold style="color: #385B3C;">All Classes</h6>
                 </div>
                 <div class="table-responsive p-3">
                   <table class="table align-items-center table-flush table-hover" id="dataTableHover">
@@ -183,36 +187,30 @@ if(isset($_POST['save'])){
                     </thead>
                   
                     <tbody>
-
-                  <?php
+                    <?php
                       $query = "SELECT * FROM tblclass";
                       $rs = $conn->query($query);
                       $num = $rs->num_rows;
-                      $sn=0;
-                      if($num > 0)
-                      { 
-                        while ($rows = $rs->fetch_assoc())
-                          {
-                             $sn = $sn + 1;
-                            echo"
-                              <tr>
-                                <td>".$sn."</td>
-                                <td>".$rows['className']."</td>
-                                <td><a href='?action=edit&Id=".$rows['Id']."'><i class='fas fa-fw fa-edit'></i>Edit</a></td>
-                                <td><a href='?action=delete&Id=".$rows['Id']."'><i class='fas fa-fw fa-trash'></i>Delete</a></td>
-                              </tr>";
-                          }
+                      $sn = 0;
+                      if($num > 0) { 
+                        while ($rows = $rs->fetch_assoc()) {
+                          $sn = $sn + 1;
+                          echo "
+                            <tr>
+                              <td>".$sn."</td>
+                              <td>".$rows['className']."</td>
+                              <td><a href='?action=edit&Id=".$rows['Id']."' style='color: #385B3C;'><i class='fas fa-fw fa-edit'></i>Edit</a></td>
+                              <td><a href='?action=delete&Id=".$rows['Id']."' style='color: #385B3C;'><i class='fas fa-fw fa-trash'></i>Delete</a></td>
+                            </tr>";
+                        }
+                      } else {
+                        echo "<div class='alert alert-danger' role='alert'>
+                                No Record Found!
+                              </div>";
                       }
-                      else
-                      {
-                           echo   
-                           "<div class='alert alert-danger' role='alert'>
-                            No Record Found!
-                            </div>";
-                      }
-                      
-                      ?>
-                    </tbody>
+                    ?>
+                  </tbody>
+
                   </table>
                 </div>
               </div>

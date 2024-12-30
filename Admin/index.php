@@ -48,7 +48,9 @@ include '../Includes/session.php';
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Administrator Dashboard</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="./">Home</a></li>
+            <li class="breadcrumb-item" style="color: #ADD1C8;">
+            <a href="./" style="color: #385b3c; text-decoration: none;">Home</a>
+            </li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
           </div>
